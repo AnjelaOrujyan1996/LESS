@@ -1,56 +1,119 @@
+@import "partials/mixins";
+@import "partials/params";
 #content {
   background-color: #a30000;
-  width: 980px;
+  width: 60%;
   height: 100vh;
   margin: 0 auto;
 }
 
-.menu {
-  list-style: none;
-  margin: 14px 25px 0 10px;
-  width: 600px;
-  float: left;
-  li {
+.header {
+  &__menu {
+    list-style: none;
+    margin: 20px 25px 0 10px;
+    width: 600px;
     float: left;
-    margin: 0 4px 0 0;
 
-    ul {
-      background: #fff;
-      margin: -1px 0 0;
-      position: absolute;
-      display: none;
-      z-index: 2;
-      border: 1px solid white;
+    li {
+      float: left;
+      margin: 0 4px 0 0;
 
-      li {
-        float: none;
-        display: inline;
-        margin: 0;
-        padding: 0;
-        .current a {
-          border: 1px solid #c8b7b5;
-        }
-        a {
-          width: auto;
-          margin: 4px;
-          white-space: nowrap;
+      ul {
+        background: #fff;
+        margin: -1px 0 0;
+        position: absolute;
+        display: none;
+        z-index: 2;
+        border: 2px solid white;
 
+        li {
+          float: none;
+          display: inline;
+          margin: 0;
+          padding: 0;
+
+          .current a {
+            border: 2px solid black;
+          }
+
+          a {
+            width: auto;
+            margin: 4px;
+            white-space: nowrap;
+
+          }
         }
       }
     }
+
+    a {
+      display: block;
+      font-size: 14px;
+      padding: 14px 24px;
+      border: 2px solid white;
+      text-decoration: none;
+      color: white;
+
+      &:hover {
+        border: 2px solid #a30000;
+        color: #a30000;
+        background-color: white;
+      }
+    }
+
   }
 
-  a {
-    display: block;
-    font-size: 14px;
-    padding: 14px 24px;
-    border: 1px solid white;
-    text-decoration: none;
-    color: white;
-    &:hover {
-      border: 1px solid #c8b7b5;
-      color: #c8b7b5;
+  &__logo {
+    .logo(100px, 80px);
+    margin: 20px;
+  }
+
+  &__mainPageSearch {
+    margin-top: 20px;
+    margin-right: 20px;
+    form {
+      display: flex;
+      .searchInput {
+        .smallSearch(180px, 25px, #a30000, 12px)
+      }
+      .searchButton {
+        .smallSearchButton(#a30000, white)
+      }
     }
   }
+}
 
+.d-flex {
+  display: flex;
+  align-items: end;
+}
+
+#header_image {
+  &__content {
+    .content(100%, 500px);
+    background-image: url("./imgs/slide-4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    .text {
+      position: absolute;
+      left:1%;
+      top: -5%;
+      z-index: 999;
+      h1 {
+        font-size: 40px;
+        color: #a30000;
+      }
+      h2 {
+        font-size: 30px;
+        color: #133b3d;
+      }
+    }
+  }
+}
+
+#cards {
+  display: flex;
+  justify-content: space-around;
+  .loop(1, 3);
 }

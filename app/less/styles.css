@@ -1,0 +1,133 @@
+#content {
+  background-color: #a30000;
+  width: 60%;
+  height: 100vh;
+  margin: 0 auto;
+}
+.header__menu {
+  list-style: none;
+  margin: 20px 25px 0 10px;
+  width: 600px;
+  float: left;
+}
+.header__menu li {
+  float: left;
+  margin: 0 4px 0 0;
+}
+.header__menu li ul {
+  background: #fff;
+  margin: -1px 0 0;
+  position: absolute;
+  display: none;
+  z-index: 2;
+  border: 2px solid white;
+}
+.header__menu li ul li {
+  float: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+.header__menu li ul li .current a {
+  border: 2px solid black;
+}
+.header__menu li ul li a {
+  width: auto;
+  margin: 4px;
+  white-space: nowrap;
+}
+.header__menu a {
+  display: block;
+  font-size: 14px;
+  padding: 14px 24px;
+  border: 2px solid white;
+  text-decoration: none;
+  color: white;
+}
+.header__menu a:hover {
+  border: 2px solid #a30000;
+  color: #a30000;
+  background-color: white;
+}
+.header__logo {
+  width: 100px;
+  height: 80px;
+  margin: 20px;
+}
+.header__mainPageSearch {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.header__mainPageSearch form {
+  display: flex;
+}
+.header__mainPageSearch form .searchInput {
+  width: 180px;
+  height: 25px;
+  color: #a30000;
+  font-size: 12px;
+  border: 2px solid #a30000;
+  padding-left: 10px;
+}
+.header__mainPageSearch form .searchButton {
+  width: 60px;
+  height: 30px;
+  background-color: white;
+  color: #a30000;
+  border: 1px solid #a30000;
+}
+.d-flex {
+  display: flex;
+  align-items: end;
+}
+#header_image__content {
+  width: 100%;
+  height: 500px;
+  background-image: url("./imgs/slide-4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+#header_image__content .text {
+  position: absolute;
+  left: 1%;
+  top: -5%;
+  z-index: 999;
+}
+#header_image__content .text h1 {
+  font-size: 40px;
+  color: #a30000;
+}
+#header_image__content .text h2 {
+  font-size: 30px;
+  color: #133b3d;
+}
+#cards {
+  display: flex;
+  justify-content: space-around;
+}
+#cards #cards__1 {
+  width: 15%;
+  height: 300px;
+  border: 2px solid white;
+  background-image: url("./imgs/slide-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#cards #cards__2 {
+  width: 30%;
+  height: 300px;
+  border: 2px solid white;
+  background-image: url("./imgs/slide-2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#cards #cards__3 {
+  width: 45%;
+  height: 300px;
+  border: 2px solid white;
+  background-image: url("./imgs/slide-3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,40 @@
+@import "params";
+
+.logo(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+.smallSearch(@width, @height, @color, @size) {
+  width: @width;
+  height: @height;
+  color: @color;
+  font-size: @size;
+  border: 2px solid #a30000;
+  padding-left: 10px;
+}
+
+.smallSearchButton(@color1, @color2) {
+  width: @smallButton-width;
+  height: @smallButton-height;
+  background-color: @color2;
+  color: @color1;
+  border: 1px solid @color1;
+}
+
+.content(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+.loop(@i, @n) when (@i <= @n) {
+  #cards__@{i} {
+    width: @i*15%;
+    height: 300px;
+    border: 2px solid white;
+    background-image: url("./imgs/slide-@{i}.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .loop(@i+1, @n)
+}
