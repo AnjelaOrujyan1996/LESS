@@ -29,12 +29,38 @@
 
 .loop(@i, @n) when (@i <= @n) {
   #cards__@{i} {
-    width: @i*15%;
-    height: 300px;
+    width: if((@i = 1), 200px) if((@i = 2), 300px) if((@i = 3), 400px);
+    height: if((@i = 1), 200px) if((@i = 2), 300px) if((@i = 3), 400px);
     border: 2px solid white;
     background-image: url("./imgs/slide-@{i}.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    margin: 5px;
   }
   .loop(@i+1, @n)
+}
+
+.block(@width,@border-size, @border-style, @border-color, @backgroundColor) {
+  width: @width;
+  border: @border-size @border-style @border-color;
+  background-color: @backgroundColor;
+}
+
+.set-hr-colors() {
+  hr__1: #133b3d;
+  hr__2: #ffd600;
+  hr__3: #eeeeee;
+}
+
+.set-hr-colors {
+  // Call mixin and iterate each rule
+  each(.set-hr-colors(), .(@v, @k, @i) {
+    .hr__@{i} {
+      background-color: @v;
+      border: 1px solid @v;
+      color: @v;
+      height: if((@i = 1), 5px) if((@i = 2), 3px) if((@i = 3), 1px);
+      width: if((@i = 1), 95%) if((@i = 2), 65%) if((@i = 3), 35%);
+    }
+  });
 }
